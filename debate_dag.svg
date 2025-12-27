@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="900" height="650" viewBox="0 0 900 650"
+     xmlns="http://www.w3.org/2000/svg"
+     font-family="Arial, Helvetica, sans-serif">
+
+  <!-- Arrow Marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10"
+            refX="10" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Styles -->
+  <style>
+    .node {
+      fill: #f8f9fa;
+      stroke: #333;
+      stroke-width: 1.5;
+      rx: 8;
+      ry: 8;
+    }
+    .text {
+      font-size: 13px;
+      fill: #000;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      font-weight: bold;
+    }
+    .edge {
+      stroke: #333;
+      stroke-width: 1.2;
+      marker-end: url(#arrow);
+    }
+    .label {
+      font-size: 11px;
+      fill: #333;
+    }
+  </style>
+
+  <!-- Nodes -->
+
+  <!-- User Input -->
+  <rect x="350" y="20" width="200" height="50" class="node"/>
+  <text x="450" y="45" class="text">UserInputNode</text>
+
+  <!-- Coordinator -->
+  <rect x="350" y="100" width="200" height="60" class="node"/>
+  <text x="450" y="130" class="text">CoordinatorNode</text>
+
+  <!-- Scientist -->
+  <rect x="150" y="220" width="220" height="60" class="node"/>
+  <text x="260" y="250" class="text">Agent A (Scientist)</text>
+
+  <!-- Philosopher -->
+  <rect x="530" y="220" width="220" height="60" class="node"/>
+  <text x="640" y="250" class="text">Agent B (Philosopher)</text>
+
+  <!-- Memory -->
+  <rect x="350" y="340" width="200" height="60" class="node"/>
+  <text x="450" y="370" class="text">MemoryNode</text>
+
+  <!-- Logger -->
+  <rect x="50" y="460" width="200" height="60" class="node"/>
+  <text x="150" y="490" class="text">LoggerNode</text>
+
+  <!-- Judge -->
+  <rect x="600" y="460" width="220" height="60" class="node"/>
+  <text x="710" y="490" class="text">JudgeNode</text>
+
+  <!-- Edges -->
+
+  <!-- User → Coordinator -->
+  <line x1="450" y1="70" x2="450" y2="100" class="edge"/>
+
+  <!-- Coordinator → Scientist -->
+  <line x1="400" y1="160" x2="260" y2="220" class="edge"/>
+
+  <!-- Coordinator → Philosopher -->
+  <line x1="500" y1="160" x2="640" y2="220" class="edge"/>
+
+  <!-- Scientist → Memory -->
+  <line x1="260" y1="280" x2="450" y2="340" class="edge"/>
+
+  <!-- Philosopher → Memory -->
+  <line x1="640" y1="280" x2="450" y2="340" class="edge"/>
+
+  <!-- Memory → Logger -->
+  <line x1="350" y1="400" x2="150" y2="460" class="edge"/>
+
+  <!-- Memory → Judge -->
+  <line x1="550" y1="400" x2="710" y2="460" class="edge"/>
+
+  <!-- Labels -->
+  <text x="320" y="195" class="label">Turn Control</text>
+  <text x="580" y="195" class="label">Turn Control</text>
+  <text x="330" y="315" class="label">Update</text>
+  <text x="575" y="315" class="label">Update</text>
+  <text x="250" y="430" class="label">Log Events</text>
+  <text x="660" y="430" class="label">Final Review</text>
+
+</svg>
